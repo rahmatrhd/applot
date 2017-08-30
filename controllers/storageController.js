@@ -14,8 +14,8 @@ module.exports = {
     jwt.verify(req.headers.accesstoken, process.env.APP_SECRET, (err, user) => {
       if (err) res.send(err)
       else
-        Storage.findOne({
-          _id: user._id
+        Storage.find({
+          _id: user.userId
         })
         .then(result => res.send(result))
         .catch(err => res.send(err))
