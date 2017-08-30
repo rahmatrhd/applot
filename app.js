@@ -11,8 +11,10 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 //routing
 const index = require('./routes/index')
+const storage = require('./routes/storage')
 
 app.use('/', index)
+app.use('/storage', storage)
 
 
 //listen
