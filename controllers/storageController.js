@@ -15,7 +15,7 @@ module.exports = {
       if (err) res.send(err)
       else
         Storage.find({
-          _id: user.userId
+          user: user.userId
         })
         .then(result => res.send(result))
         .catch(err => res.send(err))
