@@ -29,8 +29,8 @@ exports.signin = (req, res) => {
         username: user.username,
         fullname: user.fullname,
         email: user.email
-      }, process.env.SECRET_KEY, (err, token) => {
-        if (err) console.log(err)
+      }, process.env.APP_SECRET, (err, token) => {
+        if (err) throw err
         res.json(token)
       });
     } else {

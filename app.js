@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/applot')
+mongoose.connect('mongodb://applot:applot@applot-shard-00-00-00cap.mongodb.net:27017,applot-shard-00-01-00cap.mongodb.net:27017,applot-shard-00-02-00cap.mongodb.net:27017/test?ssl=true&replicaSet=applot-shard-0&authSource=admin')
 
 const app = express()
 
