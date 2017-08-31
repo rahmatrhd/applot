@@ -42,7 +42,7 @@ module.exports = {
                   mimetype: file.mimetype,
                   size: file.size,
                   url: data.Location,
-                  key: data.key
+                  key: data.Key
                 })
                 .then(result => resolve(result))
                 .catch(err => reject(err))
