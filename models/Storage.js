@@ -4,7 +4,7 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var storageSchema = mongoose.Schema({
-    uploaded_date: { type: Date, default: new Date() },
+    uploaded_date: { type: Date, default: Date.now },
     user: { type: Schema.ObjectId, ref: 'User' },
     filename: String,
     mimetype: String,
