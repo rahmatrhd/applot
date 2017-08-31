@@ -59,6 +59,7 @@ module.exports = {
   },
 
   deleteFile: (req, res) => {
+
     jwt.verify(req.headers.accesstoken, process.env.APP_SECRET, (err, user) => {
       s3.deleteObject({
         Key: req.body.fileKey
@@ -66,7 +67,7 @@ module.exports = {
         if (err) res.send(err)
         else
           Storage.deleteOne({
-            _id: user.userId,
+            user: user.userId,
             key: req.body.fileKey
           })
           .then(result => res.send(result))

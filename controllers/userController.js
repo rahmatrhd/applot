@@ -13,8 +13,9 @@ exports.signup = (req, res) => {
     secretKey: secret
   })
   .then(user => {
-      res.json(user);
+    res.json(user);
   })
+  .catch(err => res.send(err))
 }
 
 exports.signin = (req, res) => {
